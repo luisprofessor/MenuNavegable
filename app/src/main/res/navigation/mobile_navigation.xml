@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/palabras">
+
+
+    <fragment
+        android:id="@+id/palabras"
+        android:name="com.example.menunavegable.ui.palabras.Palabras"
+        android:label="fragment_palabras"
+        tools:layout="@layout/fragment_palabras" >
+        <action
+            android:id="@+id/action_palabras_to_detallePalabras"
+            app:destination="@id/detallePalabras" />
+    </fragment>
+    <fragment
+        android:id="@+id/detallePalabras"
+        android:name="com.example.menunavegable.ui.palabras.DetallePalabras"
+        android:label="fragment_detalle_palabras"
+        tools:layout="@layout/fragment_detalle_palabras" >
+        <action
+            android:id="@+id/action_detallePalabras_to_palabras"
+            app:destination="@id/palabras" />
+    </fragment>
+    <fragment
+        android:id="@+id/numeros"
+        android:name="com.example.menunavegable.ui.numeros.Numeros"
+        android:label="fragment_numeros"
+        tools:layout="@layout/fragment_numeros" >
+        <action
+            android:id="@+id/action_numeros_to_escala"
+            app:destination="@id/escala" />
+    </fragment>
+    <fragment
+        android:id="@+id/escala"
+        android:name="com.example.menunavegable.ui.numeros.Escala"
+        android:label="fragment_escala"
+        tools:layout="@layout/fragment_escala" >
+        <action
+            android:id="@+id/action_escala_to_numeros"
+            app:destination="@id/numeros" />
+    </fragment>
+</navigation>
